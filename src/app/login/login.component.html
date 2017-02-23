@@ -1,0 +1,51 @@
+<!-- Modal Core -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" *ngIf="!hide">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+        <h4 class="modal-title">Sign In</h4>
+      </div>
+      <div class="modal-header" *ngIf="hide">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="!hide">
+          <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+            <button class="btn btn-primary btn-block" (click)="loginFb()" id="fb">Login With Facebook</button>
+            <button class="btn btn-primary btn-block" (click)="loginGoogle()" id="google">Login With Google</button>
+            <div class="input-group">
+              <span class="input-group-addon">
+                                <i class="material-icons">email</i>
+                            </span>
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Email Address</label>
+                <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+              </div>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">
+                                <i class="material-icons">lock</i>
+                            </span>
+              <div class="form-group label-floating is-empty">
+                <label class="control-label">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+              </div>
+            </div>
+            <button class="btn btn-info btn-block" type="submit" [disabled]="!formData.valid"><i class=" material-icons ">lock</i> Sign In</button>
+          </form>
+          <span>Don't have an account ?</span>
+          <button class="btn btn-info btn-fab btn-fab-mini btn-round" (click)="onSignup($event)">
+                        <i class="material-icons">person_add</i>
+                    </button>
+        </div>
+        <app-signup *ngIf="hide"></app-signup>
+      </div>
+    </div>
+  </div>
+</div>

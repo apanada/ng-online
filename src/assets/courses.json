@@ -1,0 +1,13 @@
+{
+    "Courses": [{
+            "Name": "Java",
+            "Duration": "5",
+            "Fees": "5000"
+        },
+        {
+            "Name": "C#",
+            "Duration": "8",
+            "Fees": "8000"
+        }
+    ]
+}

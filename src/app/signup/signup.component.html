@@ -1,0 +1,30 @@
+<form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+  <div class="input-group">
+    <span class="input-group-addon">
+        <i class="material-icons">email</i>
+    </span>
+    <div class="form-group label-floating is-empty">
+      <label class="control-label">Email Address</label>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+    </div>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">
+        <i class="material-icons">person</i>
+    </span>
+    <div class="form-group label-floating is-empty">
+      <label class="control-label">Username</label>
+      <input type="text" class="form-control" [(ngModel)]="username" name="username" required>
+    </div>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">
+        <i class="material-icons">lock</i>
+    </span>
+    <div class="form-group label-floating is-empty">
+      <label class="control-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+    </div>
+  </div>
+  <button class="btn btn-info btn-block" type="submit" [disabled]="!formData.valid"><i class=" material-icons ">person_add</i> Create my account</button>
+</form>

@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let course of courses | async">
+        {{ course.Name }} : {{course.Duration}} : {{course.Fees}}
+        <input type="text" #updatename [value]="course.Name" />
+        <button (click)="updateCourse(course.$key, updatename.value)">Update</button>
+        <button (click)="deleteCourse(course.$key)">Delete</button>
+    </li>
+</ul>
+<input type="text" #newcourse />
+<button (click)="addCourse(newcourse.value)">Add</button>
+<button (click)="deleteEverything()">Delete All</button>

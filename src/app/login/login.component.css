@@ -1,0 +1,18 @@
+#fb {
+  background: #3B5998 url('assets/images/facebook.svg') no-repeat 14px -8px;
+  background-size: 47px;
+  color: #fff;
+}
+
+#google {
+  border: 1px solid #95989A;
+  background: #fff url('assets/images/google.svg') no-repeat 25px;
+  background-size: 25px;
+  color: #000000;
+}
+
+#lock {
+  width: 40%;
+  margin: 1.5em auto 4em auto;
+  display: block;
+}
